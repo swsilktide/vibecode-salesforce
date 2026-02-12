@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Required</fullName>
+    <active>false</active>
+    <description>Industry is required before adding an Account</description>
+    <errorConditionFormula>ISPICKVAL(Industry, &quot;&quot;)</errorConditionFormula>
+    <errorMessage>Must specify Industry before saving</errorMessage>
+</ValidationRule>
