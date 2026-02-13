@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Touch_Write_Once</fullName>
+    <active>true</active>
+    <description>First Touch attribution fields are write-once and cannot be modified after they are set</description>
+    <errorConditionFormula>OR(
+    AND(
+        ISCHANGED(First_Touch_Lead_Source__c),
+        NOT(ISBLANK(PRIORVALUE(First_Touch_Lead_Source__c)))
+    ),
+    AND(
+        ISCHANGED(First_Touch_Lead_Channel__c),
+        NOT(ISBLANK(PRIORVALUE(First_Touch_Lead_Channel__c)))
+    ),
+    AND(
+        ISCHANGED(First_Touch_Lead_Channel_Detail__c),
+        NOT(ISBLANK(PRIORVALUE(First_Touch_Lead_Channel_Detail__c)))
+    ),
+    AND(
+        ISCHANGED(First_Touch_Date__c),
+        NOT(ISBLANK(PRIORVALUE(First_Touch_Date__c)))
+    )
+)</errorConditionFormula>
+    <errorMessage>First Touch attribution is write-once and cannot be modified after it is set.</errorMessage>
+</ValidationRule>
