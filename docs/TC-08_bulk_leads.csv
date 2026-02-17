@@ -1,0 +1,21 @@
+LastName,Company,First_Touch_Lead_Source__c,First_Touch_Lead_Channel__c,First_Touch_Lead_Channel_Detail__c,Last_Touch_Lead_Source__c,Last_Touch_Lead_Channel__c,Last_Touch_Lead_Channel_Detail__c,Expected_Result
+Valid1,Acme Inc,Inbound,Google,PPC,Inbound,Website,Demo Request,PASS
+Valid2,Beta LLC,Inbound,Google,SEO,Inbound,Website,Contact Us,PASS
+Valid3,Gamma Co,Inbound,Website,Demo Request,Inbound,Website,Demo Request,PASS
+Valid4,Delta Corp,Inbound,Google,PPC,Inbound,HubSpot,Content Download,PASS
+Valid5,Epsilon Ltd,Inbound,Website,Contact Us,Inbound,LinkedIn,Organic Social,PASS
+Valid6,Zeta Inc,Inbound,Google,SEO,Inbound,Website,Demo Request,PASS
+Valid7,Eta LLC,Inbound,Website,Demo Request,Inbound,Google,PPC,PASS
+Valid8,Theta Co,Inbound,LinkedIn,Organic Social,Inbound,Website,Demo Request,PASS
+Valid9,Iota Corp,Inbound,Google,PPC,Inbound,Website,Contact Us,PASS
+Valid10,Kappa Ltd,Inbound,Google,SEO,Inbound,Website,Content Download,PASS
+InvalidCh1,Fail ZoomInfo,Inbound,ZoomInfo,Cold Email,Outbound,ZoomInfo,Cold Email,FAIL
+InvalidCh2,Fail Apollo,Inbound,Apollo,Cold Email,Inbound,Apollo,Cold Call,FAIL
+InvalidCh3,Fail Outreach,Inbound,Outreach,Cold Email,Inbound,Outreach,Cold Call,FAIL
+InvalidCh4,Fail ZoomInfo Last,Outbound,ZoomInfo,Cold Call,Inbound,ZoomInfo,Cold Email,FAIL
+InvalidCh5,Fail Apollo Last,Inbound,Google,PPC,Inbound,Apollo,Cold Call,FAIL
+InvalidGoogle1,Fail Google Detail,Inbound,Google,Paid Social,Inbound,Website,Demo Request,FAIL
+InvalidGoogle2,Fail Google Detail2,Inbound,Google,Organic Social,Inbound,Google,SEO,FAIL
+InvalidGoogle3,Fail Google Detail3,Inbound,Google,Demo Request,Inbound,Website,Demo Request,FAIL
+InvalidGoogle4,Fail Google Detail4,Inbound,Google,Contact Us,Inbound,LinkedIn,Organic Social,FAIL
+InvalidGoogle5,Fail Google Detail5,Inbound,Google,Cold Email,Outbound,Outreach,Cold Call,FAIL

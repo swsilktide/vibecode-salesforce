@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Grants Read/Write access to all attribution fields on Lead, Contact, and Opportunity for RevOps/Admin users</description>
+    <description>Grants Read/Write to Lead and Contact attribution fields for all users. Correctness enforced by validation rules; FLS intentionally permissive.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.First_Touch_Date__c</field>
@@ -81,46 +81,6 @@
         <field>Lead.Last_Touch_Lead_Source__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.First_Touch_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.First_Touch_Lead_Channel_Detail__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.First_Touch_Lead_Channel__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.First_Touch_Lead_Source__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Last_Touch_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Last_Touch_Lead_Channel_Detail__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Last_Touch_Lead_Channel__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.Last_Touch_Lead_Source__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>RevOps Attribution Admin Sandbox</label>
+    <label>Attribution Lead Contact All Users</label>
 </PermissionSet>

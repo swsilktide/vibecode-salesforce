@@ -43,13 +43,17 @@
 
 **Total: 10 validation rules created**
 
-## SECTION 3 - PERMISSION SET CREATED
+## SECTION 3 - PERMISSION SETS (FLS = read/edit for all users)
 
-**RevOps_Attribution_Admin_Sandbox**
-- Grants Read/Write access to all 24 attribution fields (Lead, Contact, Opportunity)
-- Intended for RevOps/Admin users and integration users
+**Attribution_Lead_Contact_All_Users** (baseline — assign to all users)
+- Grants Read/Write to the 8 attribution fields on **Lead** and **Contact** only (16 field permissions)
+- Intended to be assigned to all users so FLS allows read and edit for everyone; validation rules enforce correctness
 
-**Note:** Field-Level Security for sales profiles must be configured in the org UI. The permission set grants access; sales profiles should have Read-Only access configured via Setup → Object Manager → [Object] → Fields → [Field] → Set Field-Level Security.
+**RevOps_Attribution_Admin_Sandbox** (optional)
+- Grants Read/Write to all 24 attribution fields (Lead, Contact, Opportunity)
+- Assign to RevOps/Admin/integration users if they need to edit Opportunity attribution
+
+**Note:** The repo does not store profile metadata. FLS for Lead and Contact attribution is implemented via the baseline permission set above. Validation rules enforce correctness; FLS is intentionally permissive.
 
 ## SECTION 4 - LEAD CONVERSION FIELD MAPPING
 
@@ -70,14 +74,13 @@
 
 ## SECTION 5 - OPTIONAL: OPPORTUNITY INHERITANCE FLOW
 
-**Status:** Not implemented (requires org-specific Primary Contact model confirmation)
-
-**Recommendation:** Implement via Record-Triggered Flow on Opportunity (After Save, when created) if Primary Contact relationship is reliable.
+**Status:** Skipped. Build spec and UI guide are in **docs/OPPORTUNITY_ATTRIBUTION_FLOW_SPEC.md** and **docs/OPPORTUNITY_ATTRIBUTION_FLOW_BUILD_GUIDE.md** if you add it later.
 
 ## SECTION 6 - TEST PLAN STATUS
 
-**Ready for execution:** TC-01 through TC-08 test cases defined in instruction sheet
-**Test evidence:** To be captured after deployment validation
+**Ready for execution:** TC-01 through TC-08 (see instruction sheet).  
+**Bulk test CSV:** **docs/TC-08_bulk_leads.csv** (20 leads: 10 valid, 10 invalid).  
+**Test evidence:** Fill **docs/REVOPS_DELIVERABLES.md** with results and screenshots.
 
 ---
 
@@ -86,11 +89,10 @@
 ✅ **Validation Passed:** All fields and validation rules validated successfully
 ⏳ **Ready for Deployment:** Run `sf project deploy start --target-org scottweilert@silktide.com.vibecode`
 
-## NEXT STEPS
+## NEXT STEPS (post-deploy)
 
-1. **Deploy fields and validation rules:** `sf project deploy start --target-org scottweilert@silktide.com.vibecode`
-2. **Deploy permission set (after fields exist):** Deploy `RevOps_Attribution_Admin_Sandbox` permission set
-3. **Configure Lead field mappings:** Setup → Object Manager → Lead → Map Lead Fields (see Section 4)
-4. **Configure Field-Level Security:** Setup → Object Manager → [Object] → Fields → [Field] → Set Field-Level Security (Read-Only for sales profiles)
-5. **Execute test plan:** TC-01 through TC-08
-6. **Capture screenshots and test evidence**
+1. **Run post-deploy runbook:** **docs/POST_DEPLOY_RUNBOOK.md** (Lead mapping, FLS, layouts, permission set assignment).
+2. **(Optional) Build Opportunity attribution flow** from **docs/OPPORTUNITY_ATTRIBUTION_FLOW_SPEC.md**.
+3. **Execute test plan** TC-01–TC-08; use **docs/TC-08_bulk_leads.csv** for bulk test.
+4. **Complete deliverables:** Fill **docs/REVOPS_DELIVERABLES.md** with test results and evidence.
+5. **Production:** See **docs/PRODUCTION_DEPLOYMENT_PLAN.md** for what to deploy, order, and validation in prod (no HubSpot/flow changes).

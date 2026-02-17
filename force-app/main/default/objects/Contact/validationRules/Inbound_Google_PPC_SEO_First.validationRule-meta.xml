@@ -4,11 +4,11 @@
     <active>true</active>
     <description>When First Touch Source is Inbound and Channel is Google, Detail must be PPC or SEO</description>
     <errorConditionFormula>AND(
-    ISPICKVAL(First_Touch_Lead_Source__c, "Inbound"),
-    ISPICKVAL(First_Touch_Lead_Channel__c, "Google"),
+    ISPICKVAL(First_Touch_Lead_Source__c, &quot;Inbound&quot;),
+    ISPICKVAL(First_Touch_Lead_Channel__c, &quot;Google&quot;),
     NOT(OR(
-        ISPICKVAL(First_Touch_Lead_Channel_Detail__c, "PPC"),
-        ISPICKVAL(First_Touch_Lead_Channel_Detail__c, "SEO")
+        ISPICKVAL(First_Touch_Lead_Channel_Detail__c, &quot;PPC&quot;),
+        ISPICKVAL(First_Touch_Lead_Channel_Detail__c, &quot;SEO&quot;)
     ))
 )</errorConditionFormula>
     <errorMessage>When channel is Google (Inbound), detail must be PPC or SEO.</errorMessage>

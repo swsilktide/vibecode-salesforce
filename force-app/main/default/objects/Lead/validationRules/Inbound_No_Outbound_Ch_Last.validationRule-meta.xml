@@ -4,11 +4,11 @@
     <active>true</active>
     <description>Prevents inbound attribution from using outbound-only channels (ZoomInfo, Apollo, Outreach) for Last Touch</description>
     <errorConditionFormula>AND(
-    ISPICKVAL(Last_Touch_Lead_Source__c, "Inbound"),
+    ISPICKVAL(Last_Touch_Lead_Source__c, &quot;Inbound&quot;),
     OR(
-        ISPICKVAL(Last_Touch_Lead_Channel__c, "ZoomInfo"),
-        ISPICKVAL(Last_Touch_Lead_Channel__c, "Apollo"),
-        ISPICKVAL(Last_Touch_Lead_Channel__c, "Outreach")
+        ISPICKVAL(Last_Touch_Lead_Channel__c, &quot;ZoomInfo&quot;),
+        ISPICKVAL(Last_Touch_Lead_Channel__c, &quot;Apollo&quot;),
+        ISPICKVAL(Last_Touch_Lead_Channel__c, &quot;Outreach&quot;)
     )
 )</errorConditionFormula>
     <errorMessage>Inbound attribution cannot use outbound channels (ZoomInfo/Apollo/Outreach).</errorMessage>
