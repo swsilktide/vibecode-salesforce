@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inbound_Google_PPC_SEO_Last</fullName>
+    <active>true</active>
+    <description>When Last Touch Source is Inbound and Channel is Google, Detail must be PPC or SEO</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Last_Touch_Lead_Source__c, "Inbound"),
+    ISPICKVAL(Last_Touch_Lead_Channel__c, "Google"),
+    NOT(OR(
+        ISPICKVAL(Last_Touch_Lead_Channel_Detail__c, "PPC"),
+        ISPICKVAL(Last_Touch_Lead_Channel_Detail__c, "SEO")
+    ))
+)</errorConditionFormula>
+    <errorMessage>When channel is Google (Inbound), detail must be PPC or SEO.</errorMessage>
+</ValidationRule>
